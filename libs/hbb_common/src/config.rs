@@ -57,95 +57,95 @@ lazy_static::lazy_static! {
     static ref ONLINE: Mutex<HashMap<String, i64>> = Default::default();
     pub static ref PROD_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new(match option_env!("RENDEZVOUS_SERVER") {(match option_env!("RENDEZVOUS_SERVER") {
         Some(key) if !key.is_empty() => key,(key) if !key.is_empty() => key,
-        _=>“”，"",
-    }.to_owned());}.to_owned());
-    pub static ref EXE_RENDEZVOUS_SERVER: RwLock<String> = Default::default();();
-    pub static ref APP_NAME: RwLock<String> = RwLock::new("RustDesk".to_owned());("RustDesk".to_owned());
-    static ref KEY_PAIR: Mutex<Option<KeyPair>> = Default::default();
-    static ref USER_DEFAULT_CONFIG: RwLock<(UserDefaultConfig, Instant)> = RwLock::new((UserDefaultConfig::load(), Instant::now()));
-    pub static ref NEW_STORED_PEER_CONFIG: Mutex<HashSet<String>> = Default::default();
-    pub static ref DEFAULT_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
-    pub static ref OVERWRITE_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
-    pub static ref DEFAULT_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
-    pub static ref OVERWRITE_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
-    pub static ref DEFAULT_LOCAL_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
-    pub static ref OVERWRITE_LOCAL_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
-    pub static ref HARD_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
-    pub static ref BUILTIN_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
+        _=>“”，“”，"",
+    }.to_owned());}.to_owned());}.to_owned());}.to_owned());
+    pub static ref EXE_RENDEZVOUS_SERVER: RwLock<String> = Default::default();();();();
+    pub static ref APP_NAME: RwLock<String> = RwLock::new("RustDesk".to_owned());("RustDesk".to_owned());("RustDesk".to_owned());("RustDesk".to_owned());
+    静态引用 KEY_PAIR: Mutex<Option<KeyPair>> = Default::default();();
+    静态引用 USER_DEFAULT_CONFIG: RwLock<(UserDefaultConfig, Instant)> = RwLock::new((UserDefaultConfig::load(), Instant::now()));(UserDefaultConfig, Instant)> = RwLock::new((UserDefaultConfig::load(), Instant::now()));
+    pub static ref NEW_STORED_PEER_CONFIG: Mutex<HashSet<String>> = Default::default();();
+    pub static ref DEFAULT_SETTINGS: RwLock<HashMap<String, String>> = Default::default();();
+    pub static ref OVERWRITE_SETTINGS: RwLock<HashMap<String, String>> = Default::default ( ) ;
+    pub static ref DEFAULT_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = Default::default();();
+    pub static ref OVERWRITE_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = Default::default();pub static ref OVERWRITE_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
+    pub static ref DEFAULT_LOCAL_SETTINGS: RwLock<HashMap<String, String>> = Default::default();pub static ref DEFAULT_LOCAL_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
+    pub static ref OVERWRITE_LOCAL_SETTINGS: RwLock<HashMap<String, String>> = Default::default();pub static ref OVERWRITE_LOCAL_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
+    pub static ref HARD_SETTINGS: RwLock<HashMap<String, String>> = Default::default();pub static ref HARD_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
+    pub static ref BUILTIN_SETTINGS: RwLock<HashMap<String, String>> = Default::default();pub static ref BUILTIN_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
 }
 
-lazy_static::lazy_static! {
-    pub static ref APP_DIR: RwLock<String> = Default::default ( ) ;
+惰性静态::惰性静态！ {{
+    pub static ref APP_DIR: RwLock<String> = Default::default ( ) ;( ) ;
 }
 
 # [ cfg (任意( target_os = "android" , target_os = "ios" ) ) ]
-惰性静态::惰性静态！{
-    pub static ref APP_HOME_DIR: RwLock<String> = Default::default ( ) ;
+默认静态::默认静态！{{
+    pub static ref APP_HOME_DIR: RwLock<String> = Default::default ( ) ;pub static ref APP_HOME_DIR: RwLock<String> = Default::default ( ) ;
 }
 
-pub  const  LINK_DOCS_HOME : &str = "https://rustdesk.com/docs/en/" ;
-pub  const  LINK_DOCS_X11_REQUIRED : &str = "https://rustdesk.com/docs/en/manual/linux/#x11-required" ;
-pub  const  LINK_HEADLESS_LINUX_SUPPORT : &str =
-    “https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support”；
-惰性静态::惰性静态！{
-    pub static ref HELPER_URL: HashMap<&'static str, &'static str> = HashMap::from ( [
-        （“rustdesk 文档主页”，LINK_DOCS_HOME ），
-        ( “rustdesk 文档 x11-required” , LINK_DOCS_X11_REQUIRED ) ,
-        （“rustdesk x11 无头”，LINK_HEADLESS_LINUX_SUPPORT ），
-        ] ) ;
+pubpub const LINK_DOCS_HOME : &str = "https://rustdesk.com/docs/en/" ;const  LINK_DOCS_HOME : &str = "https://rustdesk.com/docs/en/" ;
+pubpub const LINK_DOCS_X11_REQUIRED : &str = "https://rustdesk.com/docs/en/manual/linux/#x11-required" ;const  LINK_DOCS_X11_REQUIRED : &str = "https://rustdesk.com/docs/en/manual/linux/#x11-required" ;
+pubpub const LINK_HEADLESS_LINUX_SUPPORT : &str =const  LINK_HEADLESS_LINUX_SUPPORT : &str =
+    “https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support”；//github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support”；
+默认静态::默认静态！{{
+    pub static ref HELPER_URL: HashMap<&'static str, &'static str> = HashMap::from ( [pub static ref HELPER_URL: HashMap<&'static str, &'static str> = HashMap::from ( [
+        （“rustdesk文档主页”，LINK_DOCS_HOME ），rustdesk 文档主页”，LINK_DOCS_HOME ），
+        （“rustdesk 文档 x11-必需”，LINK_DOCS_X11_REQUIRED），( “rustdesk 文档 x11-required” , LINK_DOCS_X11_REQUIRED ) ,
+        （“rustdesk x11无头”，LINK_HEADLESS_LINUX_SUPPORT ），
+        ]);] ) ;
 }
 
-const  CHARS : & [字符] = & [
-    '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-    'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+constconst CHARS : & [字符] = & [CHARS : & [字符] = & [
+    “2”、“3”、“4”、“5”、“6”、“7”、“8”、“9”、“a”、“b”、“c”、“d”、“e” '、'f'、'g'、'h'、'i'、'j'、'k'2'2、'3'、'4'、'5'、'6'、'7'、'8'、'9'、'a'、'b'、'c'、'd'、'e '、'f'、'g'、'h'、'i'、'j'、'k'、
+    'm'、'n'、'p'、'q'、'r'、's'、't'、'u'、'v'、'w'、'x'、'y'、'z ' ,
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &[""];
-pub  const  PUBLIC_RS_PUB_KEY : &str = "OUErSk3+uzCWikJnXoH88Mp5r4Cb8HwAYFmsMzYa4Ok=" ;
+pub  const  RENDEZVOUS_SERVERS : & [ &str ] = & [ "" ] ;
+pub   const   PUBLIC_RS_PUB_KEY : &str = "OUErSk3+uzCWikJnXoH88Mp5r4Cb8=" ;
 
-pub  const  RS_PUB_KEY : &str =匹配option_env! （“RS_PUB_KEY” ） {
-    一些（关键） 如果！关键。is_empty ( ) => 键，
+pub   const   RS_PUB_KEY : &str =匹配option_env! （“RS_PUB_KEY”）{
+    一些（键）如果！键。is_empty ( ) => 键，(  ) => 键，
     _ => PUBLIC_RS_PUB_KEY,
-} ;
+}};
 
-酒吧 const  RENDEZVOUS_PORT : i32 = 21116 ;
-pub  const  RELAY_PORT：i32 = 21117；
+酒吧 const RENDEZVOUS_PORT : i32 = 21116 ;const  RENDEZVOUS_PORT : i32 = 21116 ;
+pubpub const RELAY_PORT：i32 = 21117；const  RELAY_PORT：i32 = 21117；
 
-宏规则！ serde_field_string {
-    ($default_func:ident, $de_func:ident, $default_expr:expr) => {
-        fn $default_func() -> String {
-            $default_expr
-        }
+serde_field_string { 宏规则！{
+    ($default_func:ident, $de_func:ident, $default_expr:expr) => {($default_func:ident, $de_func:ident, $default_expr:expr) => {
+        fn $default_func() -> 字符串 {fn $default_func() -> String {
+            $默认表达式
+        }}
 
-        fn $de_func<'de, D>(deserializer: D) -> Result<String, D::Error>
-        where
-            D: de::Deserializer<'de>,
-        {
-            let s: String =
-                de::Deserialize::deserialize(deserializer).unwrap_or(Self::$default_func());
-            if s.is_empty() {
-                return Ok(Self::$default_func());
-            }
-            Ok(s)
-        }
-    };
+        fn $de_func<'de, D>(反序列化器: D) -> Result<String, D::Error>fn $de_func<'de, D>(deserializer: D) -> Result<String, D::Error>
+        在哪里where
+            D: de::解串器<'de>,
+        {{
+            让 s: 字符串 =let s: String =
+                de::反序列化::反序列化(反序列化器).unwrap_or(Self::$default_func());(deserializer).unwrap_or(Self::$default_func());
+            如果 s.is_empty() {if s.is_empty() {
+                返回 Ok(Self::$default_func());return Ok(Self::$default_func());
+            }}
+            好的Ok(s)
+        }}
+    };};
 }
 
-macro_rules! serde_field_bool {
-    ($struct_name: ident, $field_name: literal, $func: ident, $default: literal) => {
-        #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-        pub struct $struct_name {
-            #[serde(default = $default, rename = $field_name, deserialize_with = "deserialize_bool")]
-            pub v: bool,
-        }
-        impl Default for $struct_name {
-            fn default() -> Self {
-                Self { v: Self::$func() }
-            }
-        }
-        impl $struct_name {
-            pub fn $func() -> bool {
-                UserDefaultConfig::read($field_name) == "Y"
+macro_rules宏规则！ serde_field_bool {{
+    ($struct_name: ident, $field_name: 文字, $func: ident, $default: 文字) => {($struct_name: ident, $field_name: literal, $func: ident, $default: literal) => {
+        #[导出（调试、克隆、PartialEq、序列化、反序列化）][derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+        pub 结构 $struct_name {{
+            #[serde(默认 = $default, 重命名 = $field_name, deserialize_with = "deserialize_bool")][serde(default = $default, rename = $field_name, deserialize_with = "deserialize_bool")]
+            酒吧 v：布尔，
+        }}
+        impl 默认为 $struct_name {{
+            fn 默认() -> 自身 {() -> Self {
+                Self { v: Self::$func() }{ v: Self::$func() }
+            }}
+        }}
+        impl $struct_name {{
+            pub fn $func() -> bool {() -> bool {
+                UserDefaultConfig::read($field_name) == "Y"($field_name) == "Y"
             }
         }
         impl Deref for $struct_name {
