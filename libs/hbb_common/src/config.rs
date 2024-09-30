@@ -1,4 +1,4 @@
-use std::{
+使用标准::{
     collections::{HashMap, HashSet},
     fs,
     io::{Read, Write},
@@ -55,12 +55,12 @@ lazy_static::lazy_static! {
     static ref LOCAL_CONFIG: RwLock<LocalConfig> = RwLock::new(LocalConfig::load());
     static ref TRUSTED_DEVICES: RwLock<(Vec<TrustedDevice>, bool)> = Default::default();
     static ref ONLINE: Mutex<HashMap<String, i64>> = Default::default();
-    pub static ref PROD_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new(match option_env!("RENDEZVOUS_SERVER") {
-        Some(key) if !key.is_empty() => key,
-        _ => "",
-    }.to_owned());
-    pub static ref EXE_RENDEZVOUS_SERVER: RwLock<String> = Default::default();
-    pub static ref APP_NAME: RwLock<String> = RwLock::new("RustDesk".to_owned());
+    pub static ref PROD_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new(match option_env!("RENDEZVOUS_SERVER") {(match option_env!("RENDEZVOUS_SERVER") {
+        Some(key) if !key.is_empty() => key,(key) if !key.is_empty() => key,
+        _=>“”，"",
+    }.to_owned());}.to_owned());
+    pub static ref EXE_RENDEZVOUS_SERVER: RwLock<String> = Default::default();();
+    pub static ref APP_NAME: RwLock<String> = RwLock::new("RustDesk".to_owned());("RustDesk".to_owned());
     static ref KEY_PAIR: Mutex<Option<KeyPair>> = Default::default();
     static ref USER_DEFAULT_CONFIG: RwLock<(UserDefaultConfig, Instant)> = RwLock::new((UserDefaultConfig::load(), Instant::now()));
     pub static ref NEW_STORED_PEER_CONFIG: Mutex<HashSet<String>> = Default::default();
@@ -75,43 +75,43 @@ lazy_static::lazy_static! {
 }
 
 lazy_static::lazy_static! {
-    pub static ref APP_DIR: RwLock<String> = Default::default();
+    pub static ref APP_DIR: RwLock<String> = Default::default ( ) ;
 }
 
-#[cfg(any(target_os = "android", target_os = "ios"))]
-lazy_static::lazy_static! {
-    pub static ref APP_HOME_DIR: RwLock<String> = Default::default();
+# [ cfg (任意( target_os = "android" , target_os = "ios" ) ) ]
+惰性静态::惰性静态！{
+    pub static ref APP_HOME_DIR: RwLock<String> = Default::default ( ) ;
 }
 
-pub const LINK_DOCS_HOME: &str = "https://rustdesk.com/docs/en/";
-pub const LINK_DOCS_X11_REQUIRED: &str = "https://rustdesk.com/docs/en/manual/linux/#x11-required";
-pub const LINK_HEADLESS_LINUX_SUPPORT: &str =
-    "https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support";
-lazy_static::lazy_static! {
-    pub static ref HELPER_URL: HashMap<&'static str, &'static str> = HashMap::from([
-        ("rustdesk docs home", LINK_DOCS_HOME),
-        ("rustdesk docs x11-required", LINK_DOCS_X11_REQUIRED),
-        ("rustdesk x11 headless", LINK_HEADLESS_LINUX_SUPPORT),
-        ]);
+pub  const  LINK_DOCS_HOME : &str = "https://rustdesk.com/docs/en/" ;
+pub  const  LINK_DOCS_X11_REQUIRED : &str = "https://rustdesk.com/docs/en/manual/linux/#x11-required" ;
+pub  const  LINK_HEADLESS_LINUX_SUPPORT : &str =
+    “https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support”；
+惰性静态::惰性静态！{
+    pub static ref HELPER_URL: HashMap<&'static str, &'static str> = HashMap::from ( [
+        （“rustdesk 文档主页”，LINK_DOCS_HOME ），
+        ( “rustdesk 文档 x11-required” , LINK_DOCS_X11_REQUIRED ) ,
+        （“rustdesk x11 无头”，LINK_HEADLESS_LINUX_SUPPORT ），
+        ] ) ;
 }
 
-const CHARS: &[char] = &[
+const  CHARS : & [字符] = & [
     '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["124.222.243.38"];
-pub const PUBLIC_RS_PUB_KEY: &str = "OUErSk3+uzCWikJnXoH88Mp5r4Cb8HwAYFmsMzYa4Ok=";
+pub const RENDEZVOUS_SERVERS: &[&str] = &[""];
+pub  const  PUBLIC_RS_PUB_KEY : &str = "OUErSk3+uzCWikJnXoH88Mp5r4Cb8HwAYFmsMzYa4Ok=" ;
 
-pub const RS_PUB_KEY: &str = match option_env!("RS_PUB_KEY") {
-    Some(key) if !key.is_empty() => key,
+pub  const  RS_PUB_KEY : &str =匹配option_env! （“RS_PUB_KEY” ） {
+    一些（关键） 如果！关键。is_empty ( ) => 键，
     _ => PUBLIC_RS_PUB_KEY,
-};
+} ;
 
-pub const RENDEZVOUS_PORT: i32 = 21116;
-pub const RELAY_PORT: i32 = 21117;
+酒吧 const  RENDEZVOUS_PORT : i32 = 21116 ;
+pub  const  RELAY_PORT：i32 = 21117；
 
-macro_rules! serde_field_string {
+宏规则！ serde_field_string {
     ($default_func:ident, $de_func:ident, $default_expr:expr) => {
         fn $default_func() -> String {
             $default_expr
